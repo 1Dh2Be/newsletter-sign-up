@@ -1,35 +1,51 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { Field, Form, Formik } from 'formik';
 import './App.css'
+import { VscCheck } from "react-icons/vsc";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div className='app'>
+      <main className='main'>
+        <section className='app__container'>
+          <section className='left__section'>
+            <h1>Stay updated!</h1>
+            <p>Join 60,000 product managers receiving monthly updates on:</p>
+            <ul>
+              <li>
+                <VscCheck />
+                <p>Product discovery and building what matters</p>
+              </li>
+              <li>
+                <VscCheck />
+                <p>Measuring to ensure updates are a success</p>
+              </li>
+              <li>
+                <VscCheck />
+                <p>And much more!</p>
+              </li>
+            </ul>
+
+            <Formik initialValues={{ email: '' }}>
+              <Form>
+                <label htmlFor="email">Email address</label>
+                <Field type="email" name="email" placeholder="email@company.com" />
+                <button type="submit" className='signin__newsletter--btn'>
+                  Subscribe to monthly newsletter
+                </button>
+              </Form>
+            </Formik>
+          </section>
+
+          <aside className='right__section'>
+            <picture>
+              <source srcSet="src/assets/images/illustration-sign-up-mobile.svg" media="(max-width: 450px)" />
+              <img src="src/assets/images/illustration-sign-up-desktop.svg" alt="Illustration of user signing up for a newsletter" />
+            </picture>
+          </aside>
+        </section>
+      </main>
+    </div>
   )
 }
 
-export default App
+export default App;
