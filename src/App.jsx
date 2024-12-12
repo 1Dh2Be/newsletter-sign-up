@@ -9,17 +9,17 @@ function App() {
         <section className='app__container'>
           <section className='left__section'>
             <h1>Stay updated!</h1>
-            <p>Join 60,000 product managers receiving monthly updates on:</p>
+            <p>Join 60,000+ product managers receiving monthly updates on:</p>
             <ul>
-              <li>
+              <li className='list__item'>
                 <VscCheck />
                 <p>Product discovery and building what matters</p>
               </li>
-              <li>
+              <li className='list__item'>
                 <VscCheck />
                 <p>Measuring to ensure updates are a success</p>
               </li>
-              <li>
+              <li className='list__item'>
                 <VscCheck />
                 <p>And much more!</p>
               </li>

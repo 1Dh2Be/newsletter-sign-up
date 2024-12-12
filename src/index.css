@@ -28,7 +28,7 @@
 body {
   font-family: var(--font-family-primary);
   font-size: var(--font-size-paragraph);
-  color: var(--color-neutral-dark-slate-grey);
+  color: #000;
   background-color: var(--color-neutral-white);
   line-height: 1.5;
 }
