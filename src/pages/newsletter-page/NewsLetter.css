@@ -47,7 +47,7 @@ p {
 
 /* LEFT LAYOUT DEFINED HERE */
 .left__section {
-    padding: 1.5em;
+    padding: 1em 1.5em;
 }
 
 li:first-child {
@@ -82,10 +82,22 @@ li:last-child {
     flex-direction: column;
 }
 
+.input__text--content {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.2em;
+
+}
+
 .formik__label  {
     color: var(--color-neutral-dark-slate-grey);
     font-weight: var(--font-weight-bold);
-    margin-bottom: 0.2em;
+    font-size: 0.9rem;
+}
+
+.error__message {
+    color: #FF5252;
+    font-weight: var(--font-weight-bold);
     font-size: 0.9rem;
 }
 
@@ -100,6 +112,14 @@ li:last-child {
     font-size: 1rem;
 }
 
+.formik__field.error {
+    outline: 1px solid #FF5252;
+    border: 1px solid #FF5252;
+    background-color: rgba(255, 82, 82, 0.1);
+    color: #FF5252;
+}
+
+
 .signup__newsletter--btn {
     margin-top: 1em;
     padding: 1em 0;
@@ -109,6 +129,17 @@ li:last-child {
     color: #fff;
     font-family: var(--font-family-primary);
     font-size: clamp(1rem, 3vw, 1.2rem);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.signup__newsletter--btn:hover {
+    box-shadow: 0 4px 15px rgba(255, 85, 118, 0.8);
+    background: var(--color-primary-tomato);
+}
+
+.signup__newsletter--btn:disabled {
+    opacity: 0.6;
 }
 
 

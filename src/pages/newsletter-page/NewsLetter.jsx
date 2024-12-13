@@ -1,15 +1,21 @@
 import "./NewsLetter.css"
-import { Field, Form, Formik } from 'formik';
+import { ErrorMessage, Field, Form, Formik } from 'formik';
 import { IoMdCheckmark } from "react-icons/io";
 import { useNavigate } from 'react-router';
+import { validationSchema } from "../../schemas/Schema";
+import { useEmail } from "./EmailContext";
 
 function NewsLetter() {
 
+  const { setEmail } = useEmail();
+
   const navigate = useNavigate();
 
-  const handleSubmit = () => {
-    navigate('Confirmation')
-  }
+  const handleSubmit = (values) => {
+    setEmail(values.email);
+    navigate('Confirmation');
+  };
+
 
   return (
     <div className='app'>
@@ -33,14 +39,23 @@ function NewsLetter() {
               </li>
             </ul>
 
-            <Formik initialValues={{ email: '' }}>
-              <Form className='formik__form' onSubmit={handleSubmit}>
-                <label className='formik__label' htmlFor="email">Email address</label>
-                <Field className="formik__field" type="email" name="email" placeholder="email@company.com" />
-                <button type="submit" className='signup__newsletter--btn'>
-                  Subscribe to monthly newsletter
-                </button>
-              </Form>
+            <Formik
+              initialValues={{ email: '' }}
+              validationSchema={validationSchema}
+              onSubmit={handleSubmit}
+            >
+              {({isValid, dirty, touched, errors}) => (
+                <Form className='formik__form'>
+                  <div className="input__text--content">
+                    <label className='formik__label' htmlFor="email">Email address</label>
+                    <ErrorMessage name="email" component="div" className="error__message"/>
+                  </div>
+                  <Field className={`formik__field ${touched.email && errors.email ? "error" : ""}`} type="email" name="email" placeholder="email@company.com"/>
+                  <button type="submit" className='signup__newsletter--btn' disabled={!(dirty && isValid)}>
+                    Subscribe to monthly newsletter
+                  </button>
+                </Form>
+              )}
             </Formik>
           </section>
 

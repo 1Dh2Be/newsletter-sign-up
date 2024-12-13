@@ -1,9 +1,13 @@
 import { useNavigate } from "react-router";
 import "./Confirmation.css"
 import { IoMdCheckmark } from "react-icons/io";
+import { useEmail } from "../newsletter-page/EmailContext";
 
 
 export default function Confirmation() {
+
+  const {email} = useEmail();
+  console.log(email)
 
   const navigate = useNavigate();
 
@@ -18,8 +22,8 @@ export default function Confirmation() {
               <section className="confirmation__message">
                 <IoMdCheckmark color='#fff' className='check__icon--confirmation' size="18px"/>
                 <h1 className="confirmation__message--h1">Thanks for subscribing!</h1>
-                <p>
-                    A confirmation mail has been sent to <span className="email__user">USER</span>.
+                <p className="confirmation__message--p">
+                    A confirmation mail has been sent to <span className="email__user">{email}</span>.
                     Please open it and click the button inside to confirm your subscription
                 </p>
               </section>
