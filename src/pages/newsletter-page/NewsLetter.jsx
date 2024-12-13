@@ -1,3 +1,4 @@
+import "./NewsLetter.css"
 import { Field, Form, Formik } from 'formik';
 import { IoMdCheckmark } from "react-icons/io";
 import { useNavigate } from 'react-router';
@@ -45,7 +46,7 @@ function NewsLetter() {
 
           <aside className='right__section'>
             <picture>
-              <source srcSet="src/assets/images/illustration-sign-up-mobile.svg" media="(max-width: 450px)" />
+              <source srcSet="src/assets/images/illustration-sign-up-mobile.svg" media="(max-width: 800px)" />
               <img src="src/assets/images/illustration-sign-up-desktop.svg" alt="Illustration of user signing up for a newsletter" />
             </picture>
           </aside>

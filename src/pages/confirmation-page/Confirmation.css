@@ -43,3 +43,24 @@
     border-radius: 5px;
     font-family: var(--font-family-primary)
 }
+
+@media (min-width: 800px) {
+
+    .main__confirmation {
+        width: 40%;
+        max-width: 550px;
+        max-height: 50%;
+        background-color: #fff;
+        border-radius: 25px;
+
+    }
+
+    .check__icon--confirmation {
+        margin: 0;
+    }
+
+    .dismiss__message--btn {
+        margin-bottom: 1em;
+        background-color: var(--color-primary-tomato);
+    }
+}

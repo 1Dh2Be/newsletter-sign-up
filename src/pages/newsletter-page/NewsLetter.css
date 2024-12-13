@@ -1,0 +1,181 @@
+/* HTML TAGS DEFINED HERE */
+picture {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+li {
+    list-style: none;
+}
+
+h1 {
+    font-size: clamp(2.5rem, 3vw, 4rem);
+    margin-bottom: 0.3em;
+}
+
+p {
+    font-size: clamp(0.9rem, 3vw, 1.1rem);
+    font-weight: 500;
+
+}
+
+/* TOP CLASSES DEFINED HERE */
+.app {
+    height: 100vh;
+}
+
+.app__container {
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 30% 70%;
+}
+
+/* RIGHT LAYOUT DEFINED HERE  */
+.right__section {
+    grid-row: 1 ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* LEFT LAYOUT DEFINED HERE */
+.left__section {
+    padding: 1.5em;
+}
+
+li:first-child {
+    margin-top: 1em;
+}
+
+li:last-child {
+    margin-bottom: 1em;
+}
+
+.check__icon {
+    position: relative;
+    right: 15px;
+    width: 20px;
+    height: 20px;
+    background-color: var(--color-primary-tomato);
+    border-radius: 50%;
+    padding: 0.15em;
+    flex-shrink: 0;
+}
+
+.list__item {
+    display: flex;
+    align-items: flex-start;
+    padding: 0.3em 1em;
+}
+
+/* FORM STYLES DEFINED HERE */
+
+.formik__form {
+    display: flex;
+    flex-direction: column;
+}
+
+.formik__label  {
+    color: var(--color-neutral-dark-slate-grey);
+    font-weight: var(--font-weight-bold);
+    margin-bottom: 0.2em;
+    font-size: 0.9rem;
+}
+
+.formik__field {
+    border: 1px solid var(--color-neutral-grey);
+    border-radius: 5px;
+    padding: 1em;
+}
+
+.formik__field::placeholder {
+    font-family: var(--font-family-primary);
+    font-size: 1rem;
+}
+
+.signup__newsletter--btn {
+    margin-top: 1em;
+    padding: 1em 0;
+    border-radius: 5px;
+    border: none;
+    background-color: var(--color-neutral-dark-slate-grey);
+    color: #fff;
+    font-family: var(--font-family-primary);
+    font-size: clamp(1rem, 3vw, 1.2rem);
+}
+
+
+/* BIG PHONES LAYOUT HERE */
+@media (min-height: 840px) and (max-height:1000px) {
+
+.app__container {
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 40% 60%;
+    }
+
+h1 {
+    font-size: clamp(2.5rem, 3vw, 4rem);
+    margin-bottom: 0.3em;
+    margin-top: 0.5em;
+    }
+
+.benefits__list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    }
+
+.formik__form{
+    gap: 0.5em;
+    }
+
+.formik__label {
+    margin: 0;
+    }
+}
+
+@media (min-width: 800px) {
+
+    h1 {
+        font-size: clamp(2rem, 3vw, 3rem);
+        margin-bottom: 0.3em;
+        margin-top: 0.5em;
+        }
+
+
+    .app {
+        background-color: var(--color-neutral-dark-slate-grey);
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .main {
+        min-height: 60%;
+        width: 60%;
+        max-width: 900px;
+        background-color: #fff;
+        padding: 1.5em;
+        margin: 2em;
+        border-radius: 25px;
+    }
+
+    .app__container {
+        height: 100%;
+        display: flex;
+        gap: 2em;
+    }
+
+    .left__section {
+        padding: 0;
+    }
+}
