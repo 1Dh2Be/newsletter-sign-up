@@ -1,0 +1,45 @@
+.main__confirmation {
+    height: 100%;
+}
+
+.main__container {
+    height: 100%;
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.confirmation__message {
+    color: var(--color-neutral-dark-slate-grey);
+}
+
+.check__icon--confirmation {
+    margin: 5em 0 2em 0;
+    width: 40px;
+    height: 40px;
+    padding: 0.3em;
+    background-color: var(--color-primary-tomato);
+    border-radius: 50%;
+}
+
+.confirmation__message--h1 {
+    line-height: 1;
+    margin-bottom: 0.5em;
+}
+
+.email__user {
+    font-weight: var(--font-weight-bold);
+}
+
+.dismiss__message--btn {
+    display: block;
+    width: 100%;
+    padding: 1em;
+    font-size: clamp(1rem, 3vw, 1.3rem);
+    border: none;
+    color: #fff;
+    background-color: var(--color-neutral-dark-slate-grey);
+    border-radius: 5px;
+    font-family: var(--font-family-primary)
+}
